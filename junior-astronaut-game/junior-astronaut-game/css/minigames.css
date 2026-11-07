@@ -1,0 +1,52 @@
+.mini{border:2px solid var(--food);background:#12251f;animation:popin .35s ease-out}
+.mini .tt{font-family:var(--display);font-weight:700;color:var(--food);font-size:1.1rem}
+.mgarea{position:relative;height:230px;background:#0b1020;border:1px solid var(--line);border-radius:12px;overflow:hidden;touch-action:manipulation}
+.tgt{position:absolute;width:52px;height:52px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;background:var(--tc,#b9b1a5);color:#06121f;animation:pop .25s ease-out}
+.tgt .ic{width:26px;height:26px}
+.tgt.gone{animation:rise .3s forwards}
+.tgt:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.mgcount{display:flex;justify-content:space-between;font-weight:600}
+.tbar{position:relative;height:40px;background:#0b1020;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tzone{position:absolute;top:0;bottom:0;background:rgba(123,216,143,.45);border-left:2px solid var(--food);border-right:2px solid var(--food)}
+.tmark{position:absolute;top:0;bottom:0;width:6px;background:#fff;border-radius:3px;margin-left:-3px}
+.mgfb{min-height:1.6em;font-weight:700;text-align:center}
+.mgfb.ok{color:var(--food)}.mgfb.no{color:#ffb3b3}
+.btn.big{padding:14px 20px;font-size:1.1rem;width:100%}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+.dust{position:absolute;background:radial-gradient(ellipse at 50% 50%,rgba(196,188,174,.95),rgba(150,142,130,.8) 70%,rgba(150,142,130,.5));transition:opacity .25s;pointer-events:none}
+.dust.clean{opacity:0}
+.tank{position:relative;width:96px;height:150px;border:2px solid #fff;border-radius:6px 6px 14px 14px;background:#0b1020;overflow:hidden;flex:none}
+.tank .lvl{position:absolute;left:0;right:0;bottom:0;height:0}
+.tank .band{position:absolute;left:0;right:0;background:rgba(123,216,143,.4);border-top:2px dashed var(--food);border-bottom:2px dashed var(--food);display:grid;place-items:center;font-size:.8rem;font-weight:700;color:#cfeedd;z-index:1}
+.oit{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;background:transparent;border:2px solid var(--line);border-radius:10px;padding:4px 6px;min-width:48px;min-height:52px}
+.oit .ic{width:30px;height:30px}
+.oit .stem{display:block;width:10px;background:#4c9a5f;border-radius:4px}
+.oit.ok{border-color:var(--food);opacity:.6}
+.oit.bad{animation:shake .35s}
+.hcell{border:1px solid var(--line);border-radius:8px;background:#141a33;color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center;padding:0;min-height:44px}
+.hcell:hover:not(:disabled){border-color:#fff}
+.hcell.hot{background:#8f2a2a}.hcell.warm{background:#9a6a1d}.hcell.cold{background:#1f3a66}
+.hcell.src{background:var(--food);color:#06121f}
+.hcell .ic{width:26px;height:26px}
+.tri{display:grid;gap:2px;justify-items:center;align-content:center;background:var(--panel2);border:2px solid var(--line);border-radius:10px;padding:4px;min-width:0}
+.tri:hover:not(:disabled){border-color:#fff}
+.tri .tg{display:grid;justify-items:center;line-height:1.1}
+.tri .tg .ic{width:28px;height:28px}
+.tri .tg i{font-style:normal;font-size:.74rem}
+.tri .tl{font-size:.8rem;font-weight:600;text-align:center}
+.tri.ok{border-color:var(--food);background:#17382b}
+.tri.bad{border-color:var(--danger);background:#3a1820;animation:shake .35s}
+.shd{position:absolute;bottom:8px;height:14px;border-radius:8px;background:linear-gradient(90deg,#62c8ff,#9fd7ff);box-shadow:0 0 12px #62c8ff}
+.prt{position:absolute;width:18px;height:18px;color:#ffd24a}
+.prt .ic{width:18px;height:18px}
+.trk{position:relative;height:160px;margin:6px 8px 0}
+.trk .tgt2{position:absolute;top:6px;transform:translateX(-50%);color:var(--research)}
+.trk .tgt2 .ic{width:34px;height:34px}
+.tgsun{display:block;width:30px;height:30px;border-radius:50%;background:#ffe08a;box-shadow:0 0 18px #ffe08a}
+.trk .beam{position:absolute;top:44px;bottom:44px;width:3px;margin-left:-1.5px;background:rgba(255,255,255,.15)}
+.trk .beam.on{background:var(--food);box-shadow:0 0 10px var(--food)}
+.trk .dv{position:absolute;bottom:0;transform:translateX(-50%)}
+.slr{width:calc(100% - 20px);margin:6px 10px;height:36px;accent-color:var(--research)}
+.pad{border:2px solid var(--pc);border-radius:14px;background:#10152b;color:var(--pc);display:grid;place-items:center;opacity:.55}
+.pad .ic{width:44px;height:44px}
+.pad.lit{background:var(--pc);color:#06121f;opacity:1;box-shadow:0 0 18px var(--pc)}

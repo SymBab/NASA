@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<title>Junior Astronaut Mission Trainer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Sarabun:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/base.css" charset="utf-8">
+<link rel="stylesheet" href="css/meters-chips.css" charset="utf-8">
+<link rel="stylesheet" href="css/screens.css" charset="utf-8">
+<link rel="stylesheet" href="css/clock-crew-feed.css" charset="utf-8">
+<link rel="stylesheet" href="css/animation-scene.css" charset="utf-8">
+<link rel="stylesheet" href="css/minigames.css" charset="utf-8">
+<link rel="stylesheet" href="css/effects.css" charset="utf-8">
+<link rel="stylesheet" href="css/crew-tips.css" charset="utf-8">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15z M5 19l9-9"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6 M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3 M7.5 15h9"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="i-trefoil" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.8"/><path d="M12 4a8 8 0 0 1 6.9 4l-3.5 2A4 4 0 0 0 12 8z"/><path d="M12 4a8 8 0 0 1 6.9 4l-3.5 2A4 4 0 0 0 12 8z" transform="rotate(120 12 12)"/><path d="M12 4a8 8 0 0 1 6.9 4l-3.5 2A4 4 0 0 0 12 8z" transform="rotate(240 12 12)"/></symbol>
+  <symbol id="i-signal" viewBox="0 0 24 24"><path d="M4 9.5a11 11 0 0 1 16 0 M7 13a6.5 6.5 0 0 1 10 0 M10 16.5a2.5 2.5 0 0 1 4 0 M12 20h.01"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></symbol>
+  <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3 M3 12h16a3 3 0 1 1-3 3 M3 16h8"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4 M12 11v10"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 21h20z M12 10v5 M12 18v.5"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l3 6-9 12L3 9z M3 9h18"/></symbol>
+</svg>
+
+<div class="wrap" id="app"></div>
+
+<script src="js/config.js" charset="utf-8"></script>
+<script src="js/crew-story.js" charset="utf-8"></script>
+<script src="js/events-data.js" charset="utf-8"></script>
+<script src="js/game-state.js" charset="utf-8"></script>
+<script src="js/clock-schedule.js" charset="utf-8"></script>
+<script src="js/crew-mood.js" charset="utf-8"></script>
+<script src="js/events.js" charset="utf-8"></script>
+<script src="js/minigame-data.js" charset="utf-8"></script>
+<script src="js/minigame-mechanics.js" charset="utf-8"></script>
+<script src="js/minigame-flow.js" charset="utf-8"></script>
+<script src="js/actions.js" charset="utf-8"></script>
+<script src="js/ui-helpers.js" charset="utf-8"></script>
+<script src="js/crew-tips.js" charset="utf-8"></script>
+<script src="js/clock-feed-ui.js" charset="utf-8"></script>
+<script src="js/screen-start.js" charset="utf-8"></script>
+<script src="js/meters.js" charset="utf-8"></script>
+<script src="js/scene.js" charset="utf-8"></script>
+<script src="js/screens-play.js" charset="utf-8"></script>
+<script src="js/screens-event.js" charset="utf-8"></script>
+<script src="js/screens-summary-result.js" charset="utf-8"></script>
+<script src="js/effects.js" charset="utf-8"></script>
+<script src="js/render.js" charset="utf-8"></script>
+<script src="js/input.js" charset="utf-8"></script>
+<script src="js/timer.js" charset="utf-8"></script>
+<script src="js/main.js" charset="utf-8"></script>

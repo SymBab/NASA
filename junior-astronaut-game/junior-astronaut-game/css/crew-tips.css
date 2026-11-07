@@ -1,0 +1,13 @@
+.has-tip{position:relative;padding:0}
+.crewb{display:flex;gap:10px;align-items:center;width:100%;background:transparent;border:0;padding:8px 12px;text-align:left;border-radius:12px}
+.crewb .nm,.crewb .md{display:block}
+.crewb small{font-size:.72rem;opacity:.8}
+.has-tip.open{border-color:var(--research)}
+.tip{position:absolute;z-index:30;left:0;top:calc(100% + 6px);width:min(310px,calc(100vw - 32px));background:#0b1020;border:1px solid var(--research);border-radius:12px;padding:10px 12px;box-shadow:0 10px 24px rgba(0,0,0,.55);font-size:.88rem;display:none;animation:tipin .2s ease-out;line-height:1.45}
+.tip b{color:var(--research)}
+.tip p{margin:4px 0}
+.tip ul{margin:4px 0;padding-left:1.1em;display:grid;gap:2px}
+.tip .tipto{color:#ffd28a}
+.has-tip.open .tip{display:block}
+@media(hover:hover){.has-tip:hover .tip{display:block}}
+.crew .has-tip:nth-child(even) .tip{left:auto;right:0}

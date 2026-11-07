@@ -1,0 +1,54 @@
+/* v6: ปุ่ม/การ์ด, หน้าต่าง ๆ, ฉากเปลี่ยนวัน, เอฟเฟกต์ปัญหา, ทิปตัวละคร */
+@keyframes cardin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes selpulse{0%{transform:scale(.97)}60%{transform:scale(1.02)}100%{transform:scale(1)}}
+@keyframes glowg{0%{box-shadow:0 0 0 0 rgba(123,216,143,.9)}100%{box-shadow:0 0 0 16px rgba(123,216,143,0)}}
+@keyframes glowr{0%{box-shadow:0 0 0 0 rgba(255,107,107,.9)}100%{box-shadow:0 0 0 16px rgba(255,107,107,0)}}
+@keyframes tipin{from{opacity:0;transform:translateY(-6px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes dayfade{0%{opacity:0}18%{opacity:1}75%{opacity:1}100%{opacity:0}}
+@keyframes dayrise{from{transform:translateY(24px) scale(.8);opacity:0}to{transform:none;opacity:1}}
+@keyframes confall{0%{transform:translateY(-20px) rotate(0);opacity:1}100%{transform:translateY(105vh) rotate(540deg);opacity:.9}}
+@keyframes badge{0%{transform:scale(.3);opacity:0}60%{transform:scale(1.2);opacity:1}100%{transform:scale(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes puff{0%{transform:translate(0,0) scale(.5);opacity:.9}100%{transform:translate(34px,-36px) scale(2.4);opacity:0}}
+@keyframes drift{0%{transform:translate(0,0);opacity:0}30%{opacity:.9}100%{transform:translate(-18px,-12px);opacity:0}}
+@keyframes streak{0%{transform:translate(0,0);opacity:0}20%{opacity:1}100%{transform:translate(60px,170px);opacity:0}}
+@keyframes snow{0%{transform:translateY(0);opacity:0}20%{opacity:.9}100%{transform:translateY(160px);opacity:0}}
+@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(8);opacity:0}}
+.act,.opt,.pick,.tri,.hcell,.btn,.seg button{transition:transform .15s,border-color .15s,box-shadow .15s,filter .15s}
+.act:hover:not(:disabled),.opt:hover,.pick:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.act:active:not(:disabled),.opt:active,.pick:active,.btn:active,.tri:active:not(:disabled){transform:scale(.97)}
+.acts .act,.opts .opt{animation:cardin .4s ease-out both;animation-delay:calc(var(--i,0)*70ms)}
+.pick[aria-pressed="true"]{animation:selpulse .35s ease-out}
+.enter>*:not(.event):not(.popup):not(.mini):not(.res-good):not(.res-bad){animation:fadeup .5s ease-out both}
+.enter>*:nth-child(2){animation-delay:.07s!important}.enter>*:nth-child(3){animation-delay:.14s!important}.enter>*:nth-child(4){animation-delay:.21s!important}.enter>*:nth-child(5){animation-delay:.28s!important}.enter>*:nth-child(6){animation-delay:.35s!important}.enter>*:nth-child(n+7){animation-delay:.42s!important}
+.s-summary ul.plain li{animation:slidein .4s ease-out both;animation-delay:calc(var(--i,0)*110ms + .2s)}
+.s-summary .why{animation:cardin .5s ease-out both;animation-delay:.9s}
+.s-eventResult .chips .chip{animation:pop .4s ease-out both}
+.s-eventResult .chips .chip:nth-child(1){animation-delay:.15s}.s-eventResult .chips .chip:nth-child(2){animation-delay:.3s}.s-eventResult .chips .chip:nth-child(3){animation-delay:.45s}.s-eventResult .chips .chip:nth-child(4){animation-delay:.6s}.s-eventResult .chips .chip:nth-child(n+5){animation-delay:.75s}
+.s-eventResult .why{animation:cardin .5s ease-out both;animation-delay:.8s}
+.panel.res-good{border-color:var(--food);animation:glowg 1.1s ease-out}
+.panel.res-bad{border-color:var(--danger);animation:glowr 1.1s ease-out,shake .4s}
+.rbadge{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;border:2px solid currentColor;animation:badge .7s ease-out both,floaty 3s 0.8s ease-in-out infinite}
+.rbadge .ic{width:34px;height:34px}
+.rbadge.success{color:var(--power);background:#2c2410}.rbadge.partial{color:var(--research);background:#10243a}.rbadge.evac{color:var(--food);background:#12251f}
+.stat div{animation:cardin .5s ease-out both}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
+.confetti i{position:absolute;top:-20px;width:9px;height:14px;border-radius:2px;animation:confall linear both}
+.daybn{position:fixed;inset:0;z-index:60;display:grid;place-content:center;justify-items:center;gap:8px;text-align:center;pointer-events:none;animation:dayfade 1.6s ease-in-out both}
+.daybn.day{background:radial-gradient(circle at 50% 80%,#3a4f8f,#0d1020 70%)}
+.daybn.night{background:radial-gradient(circle at 50% 80%,#10152e,#02030a 75%)}
+.daybn .dbi{animation:dayrise .7s ease-out both;color:#ffe08a}.daybn.night .dbi{color:#cfd8ff}
+.daybn .dbi .ic{width:56px;height:56px}
+.daybn .dbt{font-family:var(--display);font-size:2rem;font-weight:700;animation:dayrise .7s .1s ease-out both}
+.daybn .dbs{color:var(--muted);animation:dayrise .7s .2s ease-out both;padding:0 16px}
+.fxg{opacity:0;pointer-events:none}
+.scene.fx-leak .fx-puff,.scene.fx-dust .fx-dustg,.scene.fx-storm .fx-stormg,.scene.fx-cold .fx-snow,.scene.fx-rings .fx-ring{opacity:1}
+.fx-puff circle{fill:#e8efff;transform-box:fill-box;transform-origin:center;animation:puff 1.8s ease-out infinite}
+.fx-dustg circle{fill:#c9c0b2;animation:drift 2s ease-in-out infinite}
+.fx-stormg line{stroke:#ffd24a;stroke-width:1.6;stroke-linecap:round;animation:streak 1.1s linear infinite}
+.fx-stormg .stormov{fill:#fff;opacity:0;animation:pulse .9s ease-in-out infinite}
+.fx-snow .coldov{fill:#62c8ff;opacity:.16}
+.fx-snow circle{fill:#fff;animation:snow 3s linear infinite}
+.fx-ring circle{transform-box:fill-box;transform-origin:center;fill:none;stroke:#62c8ff;stroke-width:1.5;animation:ring 1.6s ease-out infinite}
+.scene.fx-flick .win{animation:blink .3s steps(2) infinite}

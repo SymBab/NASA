@@ -1,0 +1,46 @@
+/* animation + scene + minigame */
+.scene{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#05070f}
+.scene .sky{fill:#0a0f24}.scene.night .sky{fill:#03040a}
+.scene .gnd{fill:#9a9fb2}.scene.night .gnd{fill:#3a3f58}
+.scene .cr{fill:#80859a}.scene.night .cr{fill:#2d324a}
+.scene .dome{fill:#d9deee}.scene.night .dome{fill:#7d86a6}
+.scene .win{fill:#5b6a9a}.scene.night .win{fill:#ffd37a}
+.scene .mod{fill:#bfc6dc}.scene.night .mod{fill:#6a7394}
+.scene .pan{fill:#2c4a8a;stroke:#9fb4e8;stroke-width:.6}.scene.night .pan{fill:#16204a}
+.scene .glint{fill:#fff;opacity:0;animation:glint 4s ease-in-out infinite}.scene.night .glint{display:none}
+.scene .star{fill:#fff;animation:twinkle 3s ease-in-out infinite}
+.scene .sun{transition:opacity .5s}
+.scene .rover{animation:drive 14s ease-in-out infinite alternate}
+.scene .beacon{fill:#ff6b6b;animation:blink 1.2s steps(2) infinite}
+.scene .redov{fill:#ff3b3b;opacity:0}
+.scene.alert .redov{animation:pulse 1s ease-in-out infinite}
+.scene.alert .beacon{animation-duration:.4s}
+.scene.alert .dome{animation:shake .5s 2}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes glint{0%,70%,100%{opacity:0}80%{opacity:.5}}
+@keyframes drive{from{transform:translateX(0)}to{transform:translateX(70px)}}
+@keyframes blink{50%{opacity:.25}}
+@keyframes pulse{0%,100%{opacity:0}50%{opacity:.22}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}
+@keyframes popin{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes shiver{0%,100%{transform:translateX(0)}25%{transform:translateX(-1.5px)}75%{transform:translateX(1.5px)}}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+@keyframes slidein{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+@keyframes flashup{0%{box-shadow:0 0 0 0 rgba(123,216,143,.8)}100%{box-shadow:0 0 0 10px rgba(123,216,143,0)}}
+@keyframes flashdown{0%{box-shadow:0 0 0 0 rgba(255,107,107,.8)}100%{box-shadow:0 0 0 10px rgba(255,107,107,0)}}
+@keyframes rise{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-22px)}}
+.crewc .av{animation-delay:var(--d,0s)}
+.crewc.lv0 .av{animation:bob 3.2s ease-in-out infinite}
+.crewc.lv1 .av{animation:bob 1.8s ease-in-out infinite}
+.crewc.lv2 .av{animation:shiver .35s linear infinite}
+.bubble.in{animation:slidein .4s ease-out}
+.bubble.in .av{animation:pop .5s ease-out}
+.popup,.event{animation:popin .35s ease-out}
+.event .alarm{animation:blink 1s steps(2) infinite}
+.event{animation:popin .35s ease-out,shake .45s .1s 2}
+.meter{position:relative}
+.meter.up{animation:flashup 1s ease-out}
+.meter.down{animation:flashdown 1s ease-out}
+.fl{position:absolute;right:14px;top:4px;font-family:var(--display);font-weight:700;pointer-events:none;animation:rise 1.2s ease-out forwards}
+.fl.up{color:var(--food)}.fl.down{color:var(--danger)}
